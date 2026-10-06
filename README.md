@@ -1,40 +1,91 @@
-# Day 1 — NumPy Fundamentals
+# Day 2 — NumPy Indexing, Slicing & 2D Arrays
 
-## What I Learned
+## Indexing
 
-Today I started my 365 Days of AI/ML learning journey.
-
-I learned the fundamentals of **NumPy**, one of the most important Python libraries used in data science and machine learning.
-
-### Topics Covered
-
-- Creating NumPy arrays
-- Checking array shape
-- Calculating mean
-- Finding minimum and maximum values
-- Calculating standard deviation
-- Performing mathematical operations on arrays
-- Filtering array values
-
-### Example
-
-```python
-import numpy as np
+Indexing is used to access individual elements.
 
 data = np.array([10, 20, 30, 40, 50])
 
-print(np.mean(data))
-print(np.max(data))
-print(np.min(data))
-```
+data[0]     # First element
+data[-1]    # Last element
 
-### Why NumPy Matters in AI/ML
+Python indexing starts from 0.
 
-NumPy provides fast numerical operations and multidimensional arrays that form the foundation for many data science and machine learning libraries.
+## Slicing
 
-Libraries such as Pandas, Scikit-learn, and parts of the deep-learning ecosystem build heavily on numerical array operations.
+Slicing is used to extract part of an array.
 
-## Key Takeaway
+data[1:4]
+data[:3]
+data[2:]
+data[::2]
+data[::-1]
 
-> Before learning machine learning algorithms, understanding how data is represented and manipulated is essential.
+start:stop means the stop index is not included.
 
+## Modifying Elements
+
+data[2] = 100
+
+## 2D Array
+
+A 2D array contains rows and columns.
+
+matrix = np.array([
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+])
+
+## Shape
+
+matrix.shape
+
+Output:
+
+(3, 3)
+
+It means 3 rows × 3 columns.
+
+## Accessing Elements
+
+matrix[1, 2]
+
+Accesses the element at row 1 and column 2.
+
+## Accessing Rows
+
+matrix[0]
+
+## Accessing Columns
+
+matrix[:, 0]
+
+: means all rows.
+
+## Reshape
+
+numbers = np.array([1, 2, 3, 4, 5, 6])
+numbers.reshape(2, 3)
+
+Reshape changes the dimensions of an array.
+
+Important: The total number of elements must remain the same.
+
+## Filtering
+
+matrix[matrix > 50]
+
+Returns values greater than 50.
+
+## Key Points
+
+- Indexing accesses elements.
+- Negative indexing starts from the end.
+- Slicing extracts part of an array.
+- 2D arrays contain rows and columns.
+- .shape gives rows and columns.
+- matrix[row, column] accesses an element.
+- matrix[:, column] accesses a column.
+- reshape() changes the array dimensions.
+- Boolean filtering selects values based on conditions.
